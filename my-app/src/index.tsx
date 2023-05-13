@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import {ThemeProvider, createGlobalStyle} from "styled-components";
 import {RecoilRoot} from "recoil";
 import {theme} from "./theme";
+import {QueryClient, QueryClientProvider} from "react-query";
 import App from "./App";
 
 const GlobalStyle = createGlobalStyle`
@@ -70,14 +71,18 @@ a {
 }
 `;
 
+const client = new QueryClient();
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <RecoilRoot>
-    <ThemeProvider theme = {theme}>
-      <GlobalStyle />
-      <App />
-    </ThemeProvider>
+    <QueryClientProvider client = {client}>
+      <ThemeProvider theme = {theme}>
+        <GlobalStyle />
+        <App />
+      </ThemeProvider>
+    </QueryClientProvider>
   </RecoilRoot>
 );

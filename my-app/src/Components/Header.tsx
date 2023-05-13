@@ -113,7 +113,6 @@ function Header() {
   const inputAnimation = useAnimation();
   const navAnimation = useAnimation();
   const {scrollY} = useScroll();
-  useMotionValueEvent(scrollY, "change", l => console.log(l))
   const toggleSearch = () => {
     if (searchOpen) {
       inputAnimation.start({
@@ -132,7 +131,7 @@ function Header() {
         navAnimation.start("top")
       }
     })
-  }, [scrollY], navAnimation);
+  }, [scrollY, navAnimation]);
   
   return (
     <Nav
