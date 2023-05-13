@@ -9,7 +9,7 @@ const Nav = styled.nav`
   top: 0;
   background-color: red;
   height: 80px;
-  font-size: 12px;
+  font-size: 13px;
 `;
 
 const Col = styled.div`
