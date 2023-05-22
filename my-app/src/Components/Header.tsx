@@ -73,7 +73,7 @@ const Circle = styled(motion.span)`
 `;
 
 const Input = styled(motion.input)`
-  transform-origin: right center;
+  transform-origin: center right;
   position: absolute;
   right: 0px;
   padding: 5px 10px;
